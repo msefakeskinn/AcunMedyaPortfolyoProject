@@ -1,0 +1,22 @@
+﻿@model AcunMedyaPortfolyoProject.Models.TableJob
+@{
+    ViewBag.Title = "UpdateJob";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Burası İşler Güncelleme Sayfası</h2>
+<form method="post">
+    @Html.HiddenFor(a => a.JobID)
+    <label>Ünvan</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <label>Başlangıç Tarihi</label>
+    @Html.TextBoxFor(x => x.StartDate, new { @class = "form-control" })
+    <label>Bitiş Tarihi</label>
+    @Html.TextBoxFor(x => x.EndDate, new { @class = "form-control" })
+    <label>Şirket Adı</label>
+    @Html.TextBoxFor(x => x.CompanyName, new { @class = "form-control" })
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <button>Güncelle</button>
+    </form>
+

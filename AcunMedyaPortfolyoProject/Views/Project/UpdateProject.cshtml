@@ -1,0 +1,27 @@
+﻿@model AcunMedyaPortfolyoProject.Models.TableProject
+@{
+    ViewBag.Title = "UpdateProject";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Burası Projeler Güncelleme Sayfası</h2>
+<form method="post">
+    @Html.HiddenFor(x => x.ProjectID)
+    <label>Proje Adı</label>
+    @Html.TextBoxFor(x => x.ProjectName, new { @class = "form-control" })
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <label>Proje Linki</label>
+    @Html.TextBoxFor(x => x.ProjectLink, new { @class = "form-control" })
+    <label>Resim1</label>
+    @Html.TextBoxFor(x => x.İmage1, new { @class = "form-control" })
+    <label>Resim2</label>
+    @Html.TextBoxFor(x => x.İmage2, new { @class = "form-control" })
+    <label>Resim3</label>
+    @Html.TextBoxFor(x => x.İmage3, new { @class = "form-control" })
+    <label>Kategori</label>
+    @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.categories, new { @class = "form-control" })
+    <button type="submit">Güncelle</button>
+
+</form>
+

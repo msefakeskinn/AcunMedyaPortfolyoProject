@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="24034e15cc6646618a99eeaee20068ad" Name="Diagram1" ZoomLevel="125">
+        <EntityTypeShape EntityType="DBAcunmedyaProject1Model.TableAbout" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBAcunmedyaProject1Model.TableCategory" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBAcunmedyaProject1Model.TableContact" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBAcunmedyaProject1Model.TableEducation" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBAcunmedyaProject1Model.TableJob" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBAcunmedyaProject1Model.TableServices" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBAcunmedyaProject1Model.TableSkill" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBAcunmedyaProject1Model.TableSlider" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBAcunmedyaProject1Model.TableTestimonial" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBAcunmedyaProject1Model.TableMessage" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DBAcunmedyaProject1Model.sysdiagrams" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DBAcunmedyaProject1Model.TableProject" Width="1.5" PointX="5" PointY="10" />
+        <AssociationConnector Association="DBAcunmedyaProject1Model.FK_TableProject_TableCategory" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

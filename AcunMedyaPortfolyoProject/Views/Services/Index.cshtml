@@ -1,0 +1,37 @@
+﻿@model List<AcunMedyaPortfolyoProject.Models.TableServices>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Burası Hizmetler Sayfası</h2>
+<div class="container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ServicesID</th>
+                <th>Açıklama1</th>
+                <th>Başlık</th>
+                <th>İkonURL</th>
+                <th>Açıklama2</th>
+                <th>Güncelle</th>
+                <th>Sil</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ServicesID</td>
+                    <td>@item.Description</td>
+                    <td>@item.Title</td>
+                    <td>@item.IconURL</td>
+                    <td>@item.Description2</td>
+                    <td><a href="/Services/UpdateServices/@item.ServicesID" class="btn btn-danger"> Güncelle </a></td>
+                    <td><a href="/Services/DeleteServices/@item.ServicesID" class="btn btn-dark"> Sil </a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Services/CreatServices/" class="btn btn-danger"> Oluştur</a>
+</div>

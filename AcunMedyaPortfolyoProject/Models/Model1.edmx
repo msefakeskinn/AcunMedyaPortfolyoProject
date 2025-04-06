@@ -1,0 +1,502 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DBAcunmedyaProject1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TableAbout">
+          <Key>
+            <PropertyRef Name="AboutID" />
+          </Key>
+          <Property Name="AboutID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ImageURL" Type="nvarchar(max)" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" />
+          <Property Name="BirthDay" Type="datetime" />
+          <Property Name="WebSite" Type="nvarchar" MaxLength="500" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="500" />
+          <Property Name="Age" Type="tinyint" />
+          <Property Name="Email" Type="nvarchar" MaxLength="500" />
+          <Property Name="Freelance" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description1" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Description2" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Degree" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TableCategory">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryName" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TableContact">
+          <Key>
+            <PropertyRef Name="ContactID" />
+          </Key>
+          <Property Name="ContactID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="600" />
+          <Property Name="Adress" Type="nvarchar" MaxLength="600" />
+          <Property Name="Email" Type="nvarchar" MaxLength="500" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TableEducation">
+          <Key>
+            <PropertyRef Name="EducationID" />
+          </Key>
+          <Property Name="EducationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StartYear" Type="datetime" />
+          <Property Name="EndYear" Type="datetime" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="Section" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TableJob">
+          <Key>
+            <PropertyRef Name="JobID" />
+          </Key>
+          <Property Name="JobID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="300" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TableMessage">
+          <Key>
+            <PropertyRef Name="MessageID" />
+          </Key>
+          <Property Name="MessageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameSurname" Type="nvarchar" MaxLength="250" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="250" />
+          <Property Name="Subject" Type="nvarchar" MaxLength="200" />
+          <Property Name="MessageContent" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="TableProject">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Name="ProjectID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+          <Property Name="ProjectLink" Type="nvarchar" MaxLength="1000" />
+          <Property Name="İmage1" Type="nvarchar(max)" />
+          <Property Name="İmage2" Type="nvarchar(max)" />
+          <Property Name="İmage3" Type="nvarchar(max)" />
+          <Property Name="CategoryID" Type="int" />
+        </EntityType>
+        <EntityType Name="TableServices">
+          <Key>
+            <PropertyRef Name="ServicesID" />
+          </Key>
+          <Property Name="ServicesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" />
+          <Property Name="IconURL" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Description2" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TableSkill">
+          <Key>
+            <PropertyRef Name="SkillID" />
+          </Key>
+          <Property Name="SkillID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SkillName" Type="varchar" MaxLength="100" />
+          <Property Name="Percentage" Type="tinyint" />
+          <Property Name="Description" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="TableSlider">
+          <Key>
+            <PropertyRef Name="SliderID" />
+          </Key>
+          <Property Name="SliderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameSurname" Type="nchar" MaxLength="50" />
+          <Property Name="Description" Type="nchar" MaxLength="150" />
+          <Property Name="ImageURL" Type="nchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TableTestimonial">
+          <Key>
+            <PropertyRef Name="TestimonialID" />
+          </Key>
+          <Property Name="TestimonialID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="TestimonialName" Type="nvarchar" MaxLength="200" />
+          <Property Name="Description2" Type="nvarchar" MaxLength="500" />
+          <Property Name="ImageURL" Type="nvarchar(max)" />
+          <Property Name="Title" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <Association Name="FK_TableProject_TableCategory">
+          <End Role="TableCategory" Type="Self.TableCategory" Multiplicity="0..1" />
+          <End Role="TableProject" Type="Self.TableProject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TableCategory">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="TableProject">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DBAcunmedyaProject1ModelStoreContainer">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableAbout" EntityType="Self.TableAbout" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableCategory" EntityType="Self.TableCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableContact" EntityType="Self.TableContact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableEducation" EntityType="Self.TableEducation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableJob" EntityType="Self.TableJob" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableMessage" EntityType="Self.TableMessage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableProject" EntityType="Self.TableProject" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableServices" EntityType="Self.TableServices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableSkill" EntityType="Self.TableSkill" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableSlider" EntityType="Self.TableSlider" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableTestimonial" EntityType="Self.TableTestimonial" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_TableProject_TableCategory" Association="Self.FK_TableProject_TableCategory">
+            <End Role="TableCategory" EntitySet="TableCategory" />
+            <End Role="TableProject" EntitySet="TableProject" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBAcunmedyaProject1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TableAbout">
+          <Key>
+            <PropertyRef Name="AboutID" />
+          </Key>
+          <Property Name="AboutID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BirthDay" Type="DateTime" Precision="3" />
+          <Property Name="WebSite" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Age" Type="Byte" />
+          <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Freelance" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description1" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Description2" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="Degree" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TableCategory">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TableProject" Relationship="DBAcunmedyaProject1Model.FK_TableProject_TableCategory" FromRole="TableCategory" ToRole="TableProject" />
+        </EntityType>
+        <EntityType Name="TableContact">
+          <Key>
+            <PropertyRef Name="ContactID" />
+          </Key>
+          <Property Name="ContactID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
+          <Property Name="Adress" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TableEducation">
+          <Key>
+            <PropertyRef Name="EducationID" />
+          </Key>
+          <Property Name="EducationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StartYear" Type="DateTime" Precision="3" />
+          <Property Name="EndYear" Type="DateTime" Precision="3" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Section" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TableJob">
+          <Key>
+            <PropertyRef Name="JobID" />
+          </Key>
+          <Property Name="JobID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <Property Name="CompanyName" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TableServices">
+          <Key>
+            <PropertyRef Name="ServicesID" />
+          </Key>
+          <Property Name="ServicesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IconURL" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Description2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TableSkill">
+          <Key>
+            <PropertyRef Name="SkillID" />
+          </Key>
+          <Property Name="SkillID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SkillName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Percentage" Type="Byte" />
+          <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TableSlider">
+          <Key>
+            <PropertyRef Name="SliderID" />
+          </Key>
+          <Property Name="SliderID" Type="Int32" Nullable="false" />
+          <Property Name="NameSurname" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="150" FixedLength="true" Unicode="true" />
+          <Property Name="ImageURL" Type="String" MaxLength="500" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TableTestimonial">
+          <Key>
+            <PropertyRef Name="TestimonialID" />
+          </Key>
+          <Property Name="TestimonialID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TestimonialName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Description2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="DBAcunmedyaProject1Entities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TableAbout" EntityType="Self.TableAbout" />
+          <EntitySet Name="TableCategory" EntityType="Self.TableCategory" />
+          <EntitySet Name="TableContact" EntityType="Self.TableContact" />
+          <EntitySet Name="TableEducation" EntityType="Self.TableEducation" />
+          <EntitySet Name="TableJob" EntityType="Self.TableJob" />
+          <EntitySet Name="TableServices" EntityType="Self.TableServices" />
+          <EntitySet Name="TableSkill" EntityType="Self.TableSkill" />
+          <EntitySet Name="TableSlider" EntityType="Self.TableSlider" />
+          <EntitySet Name="TableTestimonial" EntityType="Self.TableTestimonial" />
+          <EntitySet Name="TableMessage" EntityType="DBAcunmedyaProject1Model.TableMessage" />
+          <EntitySet Name="sysdiagrams" EntityType="DBAcunmedyaProject1Model.sysdiagrams" />
+          <EntitySet Name="TableProject" EntityType="DBAcunmedyaProject1Model.TableProject" />
+          <AssociationSet Name="FK_TableProject_TableCategory" Association="DBAcunmedyaProject1Model.FK_TableProject_TableCategory">
+            <End Role="TableCategory" EntitySet="TableCategory" />
+            <End Role="TableProject" EntitySet="TableProject" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="TableMessage">
+          <Key>
+            <PropertyRef Name="MessageID" />
+          </Key>
+          <Property Name="MessageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameSurname" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Mail" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Subject" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MessageContent" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TableProject">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Name="ProjectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectLink" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="İmage1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="İmage2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="İmage3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CategoryID" Type="Int32" />
+          <NavigationProperty Name="TableCategory" Relationship="DBAcunmedyaProject1Model.FK_TableProject_TableCategory" FromRole="TableProject" ToRole="TableCategory" />
+        </EntityType>
+        <Association Name="FK_TableProject_TableCategory">
+          <End Type="DBAcunmedyaProject1Model.TableCategory" Role="TableCategory" Multiplicity="0..1" />
+          <End Type="DBAcunmedyaProject1Model.TableProject" Role="TableProject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TableCategory">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="TableProject">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBAcunmedyaProject1ModelStoreContainer" CdmEntityContainer="DBAcunmedyaProject1Entities1">
+          <EntitySetMapping Name="TableAbout">
+            <EntityTypeMapping TypeName="DBAcunmedyaProject1Model.TableAbout">
+              <MappingFragment StoreEntitySet="TableAbout">
+                <ScalarProperty Name="AboutID" ColumnName="AboutID" />
+                <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="BirthDay" ColumnName="BirthDay" />
+                <ScalarProperty Name="WebSite" ColumnName="WebSite" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Freelance" ColumnName="Freelance" />
+                <ScalarProperty Name="Description1" ColumnName="Description1" />
+                <ScalarProperty Name="Description2" ColumnName="Description2" />
+                <ScalarProperty Name="Degree" ColumnName="Degree" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableCategory">
+            <EntityTypeMapping TypeName="DBAcunmedyaProject1Model.TableCategory">
+              <MappingFragment StoreEntitySet="TableCategory">
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableContact">
+            <EntityTypeMapping TypeName="DBAcunmedyaProject1Model.TableContact">
+              <MappingFragment StoreEntitySet="TableContact">
+                <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableEducation">
+            <EntityTypeMapping TypeName="DBAcunmedyaProject1Model.TableEducation">
+              <MappingFragment StoreEntitySet="TableEducation">
+                <ScalarProperty Name="EducationID" ColumnName="EducationID" />
+                <ScalarProperty Name="StartYear" ColumnName="StartYear" />
+                <ScalarProperty Name="EndYear" ColumnName="EndYear" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Section" ColumnName="Section" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableJob">
+            <EntityTypeMapping TypeName="DBAcunmedyaProject1Model.TableJob">
+              <MappingFragment StoreEntitySet="TableJob">
+                <ScalarProperty Name="JobID" ColumnName="JobID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableServices">
+            <EntityTypeMapping TypeName="DBAcunmedyaProject1Model.TableServices">
+              <MappingFragment StoreEntitySet="TableServices">
+                <ScalarProperty Name="ServicesID" ColumnName="ServicesID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="IconURL" ColumnName="IconURL" />
+                <ScalarProperty Name="Description2" ColumnName="Description2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableSkill">
+            <EntityTypeMapping TypeName="DBAcunmedyaProject1Model.TableSkill">
+              <MappingFragment StoreEntitySet="TableSkill">
+                <ScalarProperty Name="SkillID" ColumnName="SkillID" />
+                <ScalarProperty Name="SkillName" ColumnName="SkillName" />
+                <ScalarProperty Name="Percentage" ColumnName="Percentage" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableSlider">
+            <EntityTypeMapping TypeName="DBAcunmedyaProject1Model.TableSlider">
+              <MappingFragment StoreEntitySet="TableSlider">
+                <ScalarProperty Name="SliderID" ColumnName="SliderID" />
+                <ScalarProperty Name="NameSurname" ColumnName="NameSurname" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableTestimonial">
+            <EntityTypeMapping TypeName="DBAcunmedyaProject1Model.TableTestimonial">
+              <MappingFragment StoreEntitySet="TableTestimonial">
+                <ScalarProperty Name="TestimonialID" ColumnName="TestimonialID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="TestimonialName" ColumnName="TestimonialName" />
+                <ScalarProperty Name="Description2" ColumnName="Description2" />
+                <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableMessage">
+            <EntityTypeMapping TypeName="DBAcunmedyaProject1Model.TableMessage">
+              <MappingFragment StoreEntitySet="TableMessage">
+                <ScalarProperty Name="MessageContent" ColumnName="MessageContent" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="NameSurname" ColumnName="NameSurname" />
+                <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="DBAcunmedyaProject1Model.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableProject">
+            <EntityTypeMapping TypeName="DBAcunmedyaProject1Model.TableProject">
+              <MappingFragment StoreEntitySet="TableProject">
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="İmage3" ColumnName="İmage3" />
+                <ScalarProperty Name="İmage2" ColumnName="İmage2" />
+                <ScalarProperty Name="İmage1" ColumnName="İmage1" />
+                <ScalarProperty Name="ProjectLink" ColumnName="ProjectLink" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,31 @@
+﻿@model List<AcunMedyaPortfolyoProject.Models.TableServices>
+<section id="services" class="services section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Hizmetler</h2>
+        <p>Pratik ve hızlı çözümlerimle size bu alanlarda yardımcı olabilirim.</p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+        <div class="row gy-4">
+
+            @foreach (var item in Model)
+            {
+                <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-item position-relative">
+                        <div class="icon"><i class="@item.IconURL icon"></i></div>
+                        <h4><a href="" class="stretched-link">@item.Title</a></h4>
+                        <p>@item.Description2</p>
+                    </div>
+                </div><!-- End Service Item -->
+            }
+
+            
+
+        </div>
+
+    </div>
+
+</section><!-- /Services Section -->

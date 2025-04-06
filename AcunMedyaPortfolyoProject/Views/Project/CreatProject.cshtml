@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "CreatProject";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Proje Oluşturma Sayfası</h2>
+<form method="post">
+    <label>Proje Adı</label>
+    <input type="text" class="form-control" name="ProjectName" />
+    <label>Açıklama</label>
+    <input type="text" class="form-control" name="Description" />
+    <label>Proje Linki</label>
+    <input type="text" class="form-control" name="ProjectLink" />
+    <label>Resim1</label>
+    <input type="text" class="form-control" name="İmage1" />
+    <label>Resim2</label>
+    <input type="text" class="form-control" name="İmage2" />
+    <label>Resim3</label>
+    <input type="text" class="form-control" name="İmage3" />
+    <label>CategoryID</label>
+    <input type="text" class="form-control" name="CategoryID" />
+    <label>Kategori</label>
+    <select name="CategoryID" class="form-control">
+        @foreach (var item in ViewBag.categories)
+        {
+            <option value="@item.Value">@item.Text</option>
+        }
+        <button class="btn btn-success">Ekle</button>
+
+</form>
+

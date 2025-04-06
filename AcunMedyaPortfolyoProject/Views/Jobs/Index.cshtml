@@ -1,0 +1,39 @@
+﻿@model List<AcunMedyaPortfolyoProject.Models.TableJob>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Burası İş Sayfası</h2>
+<div class="container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>JobID</th>
+                <th>Ünvan</th>
+                <th>Başlangıç Traihi</th>
+                <th>Bitiş Tarihi</th>
+                <th>Şirket Adı</th>
+                <th>Açıklama</th>s
+                <th>Güncelle</th>
+                <th>Sil</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.JobID</td>
+                    <td>@item.Title</td>
+                    <td>@item.StartDate</td>
+                    <td>@item.EndDate</td>
+                    <td>@item.CompanyName</td>
+                    <td>@item.Description</td>
+                    <td><a href="/Jobs/UpdateJob/@item.JobID" class="btn btn-danger"> Güncelle </a></td>
+                    <td><a href="/Jobs/DeleteJob/@item.JobID" class="btn btn-dark"> Sil </a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Jobs/CreatJob/" class="btn btn-danger"> Oluştur</a>
+</div>

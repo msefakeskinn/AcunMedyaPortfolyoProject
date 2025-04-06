@@ -1,0 +1,34 @@
+﻿@model List<AcunMedyaPortfolyoProject.Models.TableMessage>
+
+<div class="col-lg-8">
+    <form action="@Url.Action("PartialMessage", "Default")" method="post" data-aos="fade-up" data-aos-delay="200">
+        <div class="row gy-4">
+            @if (ViewBag.MessageSent != null && ViewBag.MessageSent == true)
+            {
+                <div class="alert alert-success">
+                    Mesajınız başarıyla gönderildi!
+                </div>
+            }
+            <div class="col-md-6">
+                <input type="text" name="NameSurname" class="form-control" placeholder="Your Name" required="">
+            </div>
+
+            <div class="col-md-6 ">
+                <input type="email" class="form-control" name="Mail" placeholder="Your Email" required="">
+            </div>
+
+            <div class="col-md-12">
+                <input type="text" class="form-control" name="Subject" placeholder="Subject" required="">
+            </div>
+
+            <div class="col-md-12">
+                <textarea class="form-control" name="Message Content" rows="6" placeholder="Message" required=""></textarea>
+            </div>
+            <div class="col-md-12 text-center">
+                <button type="submit" class="btn btn-danger">Send Message</button>
+            </div>
+
+        </div>
+    </form>
+</div>
+ End Contact Form

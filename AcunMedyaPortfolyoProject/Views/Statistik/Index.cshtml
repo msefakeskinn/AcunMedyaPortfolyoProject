@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<!-- Chart.js ile Grafiklerin Tanımlanması -->
+<!-- Chart.js Kütüphanesini Dahil Et -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4">İstatistik Sayfası</h2>
+
+    <div class="row">
+        <!-- Kategori Sayısı Kartı (Çok Açık Mavi) -->
+        <div class="col-md-4">
+            <div class="card text-dark mb-3" style="background-color: #cce5ff;">
+                <div class="card-header">Kategoriler</div>
+                <div class="card-body">
+                    <h5 class="card-title">@ViewBag.CategoryCount</h5>
+                    <p class="card-text">Toplam kategori sayısı.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Referans Sayısı Kartı (Normal Mavi) -->
+        <div class="col-md-4">
+            <div class="card text-white mb-3" style="background-color: #007bff;">
+                <div class="card-header">Referanslar</div>
+                <div class="card-body">
+                    <h5 class="card-title">@ViewBag.TestimonialCount</h5>
+                    <p class="card-text">Toplam referans sayısı.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Proje Sayısı Kartı (Lacivert) -->
+        <div class="col-md-4">
+            <div class="card text-white mb-3" style="background-color: #001f3f;">
+                <div class="card-header">Projeler</div>
+                <div class="card-body">
+                    <h5 class="card-title">@ViewBag.ProjeSayisi</h5>
+                    <p class="card-text">Toplam proje sayısı.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Grafik Alanı -->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mt-4">
+                <div class="card-header text-white" style="background-color: #007bff;">Çubuk Grafiği</div>
+                <div class="card-body">
+                    <canvas id="barChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card mt-4">
+                <div class="card-header text-white" style="background-color: #001f3f;">Pasta Grafiği</div>
+                <div class="card-body">
+                    <canvas id="pieChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Chart.js ile Grafiklerin Tanımlanması -->
+<script>
+    // Verileri Razor'dan JavaScript'e aktarma
+    var categoryCount = @ViewBag.CategoryCount;
+    var testimonialCount = @ViewBag.TestimonialCount;
+    var projectCount = @ViewBag.ProjeSayisi;
+
+    // Çubuk Grafiği (Bar Chart)
+    var ctx1 = document.getElementById('barChart').getContext('2d');
+    var barChart = new Chart(ctx1, {
+        type: 'bar',
+        data: {
+            labels: ['Kategoriler', 'Referanslar', 'Projeler'],
+            datasets: [{
+                label: 'Sayısı',
+                data: [categoryCount, testimonialCount, projectCount],
+                backgroundColor: ['#cce5ff', '#007bff', '#001f3f'],
+                borderColor: ['#99ccff', '#0069d9', '#001933'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+
+    // Pasta Grafiği (Pie Chart)
+    var ctx2 = document.getElementById('pieChart').getContext('2d');
+    var pieChart = new Chart(ctx2, {
+        type: 'pie',
+        data: {
+            labels: ['Kategoriler', 'Referanslar', 'Projeler'],
+            datasets: [{
+                data: [categoryCount, testimonialCount, projectCount],
+                backgroundColor: ['#cce5ff', '#007bff', '#001f3f']
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+</script>
